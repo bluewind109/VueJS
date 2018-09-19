@@ -9,8 +9,23 @@
   <script src="./content/js/vue.js"></script>
 </head>
 <body>
-  <div id="vue-app">
+  <div class="vue-app">
+    <h1>{{greet('night')}}</h1>
+    <a :href="website">Google</a>
+    <p v-html="websiteTag"></p>
+    <input type="text" :value="name" />
+    <p>{{name}}</p>
+    <p>{{job}}</p>
+    <p>My age is {{age}}</p>
+    <p>
+      <button @click="add(1)">Add a year</button>
+      <button @click="subtract(1)">Subtract a year</button>
+      <button @dblclick="add(10)">Add a year</button>
+      <button @dblclick="subtract(10)">Subtract a year</button>
+      <a @click.prevent="click" :href="website">Google</a>
+    </p>
 
+    <div id="canvas" @mousemove="updateXY">{{x}}, {{y}}</div>
   </div>
 
   <script src="./content/js/system/app.js"></script>
