@@ -12,20 +12,22 @@
 
 <body>
   <div id="vue-app">
-    <h1>Dynamic CSS Binding</h1>
-    <h2>Example 1</h2>
-    <!-- <div @click="available = !available" :class="{available: available}">
-      <span>FlyK</span>
-    </div> -->
-    <h2>Example 2</h2>
-    <p>
-      <button @click="nearby = !nearby">Toggle nearby</button>
-      <button @click="available = !available">Toggle available</button>
-    </p>
-
-    <div :class="compClasses">
-      <span>FlyK</span>
-    </div>
+    <ul>
+      <li v-for="character in characters">{{character}}</li>
+    </ul>
+    <hr>
+    <ol>
+      <li v-for="(ninja, index) in ninjas">Ninja {{ninja.name}} is {{ninja.age}} years old</li>
+    </ol>
+    <template v-for="(ninja, index) in ninjas">
+      <h3>{{index+1}}. {{ninja.name}}</h3>
+      <p>{{ninja.age}}</p>
+    </template>
+    <template v-for="ninja in ninjas">
+      <div v-for="(val, key) in ninja">
+        <p>{{key}}: {{val}}</p>
+      </div>
+    </template>
   </div>
 
   <script src="./content/js/system/app.js"></script>
