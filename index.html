@@ -12,12 +12,20 @@
 
 <body>
   <div id="vue-app">
-    <button @click="a++">Add to A</button>
-    <button @click="b++">Add to B</button>
-    <p>A - {{a}}</p>
-    <p>B - {{b}}</p>
-    <p>Age + A = {{addtoA}}</p>
-    <p>Age + B = {{addtoB}}</p>
+    <h1>Dynamic CSS Binding</h1>
+    <h2>Example 1</h2>
+    <!-- <div @click="available = !available" :class="{available: available}">
+      <span>FlyK</span>
+    </div> -->
+    <h2>Example 2</h2>
+    <p>
+      <button @click="nearby = !nearby">Toggle nearby</button>
+      <button @click="available = !available">Toggle available</button>
+    </p>
+
+    <div :class="compClasses">
+      <span>FlyK</span>
+    </div>
   </div>
 
   <script src="./content/js/system/app.js"></script>
